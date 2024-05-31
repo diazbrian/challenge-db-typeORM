@@ -10,12 +10,12 @@ import {
 
 const router = Router();
 
-// `/users` ruta que nos lleva al metodo `getAllUsers`
-router.get("/users", getAllUsers);
+// `/events` ruta que nos lleva al metodo `getAllUsers`
+router.get("/events", getAllUsers);
 
-router.get("/users/:id", getUser);
-router.post("/users", createUser);
-router.put("/users/:id", updateUser);
-router.delete("/users/:id", deleteUser);
+router.get("/events/:id", getUser);
+router.post("/events", createUser);
+router.put("/events/:id", updateUser);
+router.delete("/events/:id", deleteUser);
 
 export default router;
