@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
 import { User } from "./entities/User";
 import { Event } from "./entities/Event";
-// import { Profile } from "./entity/Profile";
+import { Profile } from "./entities/Profile";
 // import { Photo } from "./entity/Photo";
 
 export const AppDataSource = new DataSource({
@@ -13,5 +13,5 @@ export const AppDataSource = new DataSource({
     database: "local",
     // logging: true, // muestra peticiones a la bd
     synchronize: true,
-    entities: [User, Event],
+    entities: [User, Event, Profile],
 });

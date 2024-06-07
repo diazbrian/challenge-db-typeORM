@@ -1,4 +1,15 @@
-import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import {
+    BaseEntity,
+    Column,
+    CreateDateColumn,
+    Entity,
+    JoinColumn,
+    OneToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
+} from "typeorm";
+
+import { Profile } from "./Profile";
 
 @Entity() // se puede pasar como parametro el nombre de tabla ej: 'usersTable'
 export class User extends BaseEntity {
@@ -6,10 +17,10 @@ export class User extends BaseEntity {
     id: number;
 
     @Column()
-    firstname: string;
+    email: string;
 
     @Column()
-    lastname: string;
+    password: string;
 
     @Column({ default: true })
     active: boolean;
@@ -19,4 +30,8 @@ export class User extends BaseEntity {
 
     @UpdateDateColumn()
     updatedAt: Date;
+
+    @OneToOne(() => Profile)
+    @JoinColumn()
+    profile: Profile;
 }
